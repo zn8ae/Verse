@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Verse</title>
+
+    <style>
+        footer {
+            margin-left: 20px;
+        }
+        nav {
+            background: #34B86D; /* For browsers that do not support gradients */
+            background: -webkit-linear-gradient(#34B86D, #59BDBC); /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient(#34B86D, #59BDBC); /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient(#34B86D, #59BDBC); /* For Firefox 3.6 to 15 */
+            background: linear-gradient(#34B86D, #59BDBC); /* Standard syntax */
+        }
+
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+     <nav class="navbar navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+    
+          <a class="navbar-brand" onclick="location.href='{% url 'logged' %}'" href="#" style="color: white">Verse</a>
+       
+          
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+
+         
+
+
+          <form class="navbar-form navbar-right">
+            {% if not is_logged_in %}
+           <!--  <button id="signup" name = "signup" type="button" class="btn btn-success" onclick="location.href='{% url 'hello' %}'" >Sign up</button> -->
+            <button id = "signin"name = "signin" type="button" class="btn btn-success" onclick="location.href='{% url 'hello' %}'" style="background-color: Transparent; border-color: white;">Sign in</button>
+            {% endif %}
+            {% if is_logged_in %}
+            <span style="color:white; margin-right: 10px">Welcome, {{ name }}!</span>
+            <button name = "signout" type="button" class="btn btn-success" onclick="location.href='{% url 'hello' %}'" style="background-color: Transparent; border-color: white;">Sign out</button>
+            {% endif %}
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container" style="padding-top: 50px;">
+
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h1 class="page-header" >Uploaded Content</h1>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="https://media.defense.gov/2013/Feb/07/2000077905/670/394/0/130204-F-WZ808-020.JPG" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="https://i.pinimg.com/originals/0a/10/33/0a103379c06a2703fda723f1a67e928d.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <button class="thumbnail" onclick="location.href='{% url 'history' %}'">
+                    <img class="img-responsive" src="http://info.kpmedi.net/hubfs/Screen_Shot_2016-02-05_at_1.06.14_PM.png?t=1499367723160" alt="">
+                </button>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="http://www.sealresource.co.uk/wp-content/themes/sealresource/images/magnet.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="https://blog.quandl.com/wp-content/uploads/2016/08/pitfalls-alternative-data-980x653.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb" alt="">
+                </a>
+            </div>
+           
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="https://media.defense.gov/2017/Jun/05/2001757281/670/394/0/170602-F-OC707-607.JPG" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="https://www.city.koriyama.fukushima.jp/163000/citysales/inawashiroko/images/komen.jpg" alt="">
+                </a>
+            </div>
+           
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2017 Verse, Inc.</p>
+        </footer>
+
+        </div>
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
